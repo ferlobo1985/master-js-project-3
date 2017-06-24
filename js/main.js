@@ -6,18 +6,13 @@
 
     this.search = function(){
         var form = document.querySelector('#form');
-
         form.addEventListener("submit",function(e){
             e.preventDefault();
             var value = document.querySelector('#input_search').value;
             form.reset();
-
             getData(value.split(' ').join("+"));
         });
     };
-
-
-    //  http://is3.mzstatic.com/image/thumb/Music/v4/8c/64/61/8c6461e2-0712-d9c1-f1d9-87efaefd440f/source/100x100bb.jpg
 
     this.getData = function(artist){
         var http = new XMLHttpRequest();
@@ -44,7 +39,6 @@
         var template = '';
 
         if(obj.results.length > 0){
-
             document.querySelector('#not_match').style.display = 'none';
 
             for(var i = 0 ; i < obj.results.length; i++){
@@ -62,7 +56,6 @@
             document.querySelector('#not_match').style.display = 'block';
         }
     };
-
 
     this.init();
 })();
